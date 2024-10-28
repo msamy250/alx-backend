@@ -32,21 +32,12 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        pass
-
-    def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        assert isinstance(
-            page, int) and page > 0, \
+        """Get a page of data from the dataset."""
+        assert isinstance(page, int) and isinstance(page_size, int), \
             "AssertionError raised when page and/or page_size are not ints"
-        assert isinstance(
-            page_size, int) and page > 0, \
-            "AssertionError raised when page and/or page_size are not ints"
-        assert isinstance(page == 0), "AssertionError raised with 0"
-        assert isinstance(page_size == 0), "AssertionError raised with 0"
-        assert isinstance(
-            page < 0), "AssertionError raised with negative values"
-        assert isinstance(
-            page_size < 0), "AssertionError raised with negative values"
+        assert page > 0 and page_size > 0, "AssertionError raised with 0"
+        assert page > 0 and page_size > 0, \
+            "AssertionError raised with negative values"
 
         start, end = index_range(page, page_size)
 
