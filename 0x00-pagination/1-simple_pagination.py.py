@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""takes two integer arguments"""
+"""find the correct indexes to paginate the dataset"""
 import csv
 import math
 from typing import List
