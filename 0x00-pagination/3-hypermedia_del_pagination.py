@@ -61,8 +61,7 @@ class Server:
 
         return {
             "index": start_index,
-            "next_index": next_index,
-            "page_size": page_size,
             "data": data,
-            "total_pages": total_pages,
+            "page_size": page_size,
+            "next_index": next_index,
         }
