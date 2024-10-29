@@ -39,17 +39,20 @@ class Server:
             }
         return self.__indexed_dataset
 
-    def get_hyper_index(self, index: int = None, page_size: int = 10) -> dict:
+    def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
+        """return a dictionary"""
 
         indexed_dataset = self.indexed_dataset()
-        data = self.dataset()
-        next_index = index + page_size
+
         assert 0 <= index < len(
             indexed_dataset), "AssertionError raised when out of range"
+
+        dataset = self.dataset()
+        next_index = index + page_size
 
         return {
             "index": index,
             "next_index": next_index,
             "page_size": page_size,
-            "data": data[index:next_index],
+            "data": dataset[index:next_index],
         }
