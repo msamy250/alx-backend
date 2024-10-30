@@ -1,14 +1,24 @@
-#!/usr/bin/python3
-"""BasicCache that inherits from BaseCaching"""
+#!/usr/bin/env python3
+"""cache module"""
+
+
 from base_caching import BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """BasicCache class inherits from BaseCaching"""
+
+    def __init__(self):
+        super().__init__()
+
     def put(self, key, item):
-        """Assign the item value for the key in self.cache_data"""
-        if key is not None and item is not None:
+        """Put a key/value pair"""
+        if key and item:
             self.cache_data[key] = item
+        return None
 
     def get(self, key):
-        """Return the value linked to key in self.cache_data"""
-        return self.cache_data.get(key) if key is not None else None
+        """Get a key/value pair"""
+        if key:
+            return self.cache_data.get(key)
+        return None
